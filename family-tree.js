@@ -37,13 +37,13 @@ class FamilyTree {
 
   log(){
     let arr = [];
-    let tmp = [];
+    let str2 = '';
     //console.log(this.children);
     arr = this.children.reduce((acc, famMember) => {
-      acc.push(' ---- '+famMember.value);
+      acc.push(`---- ${famMember.value}`);
       for(let i = 0; i < famMember.children.length; i++)
       {
-        acc.push(' ----- '+famMember.children[i].value);
+        acc.push(`------ ${famMember.children[i].value}`);
       }
       
       //acc.push(famMember.value);
@@ -51,9 +51,9 @@ class FamilyTree {
         
     }, ['-- '+this.value]);
 
-    tmp.push(arr.join('\n'));
-    console.log(tmp);
-    return tmp;
+    str2 = arr.join('\n');
+    //console.log(str2);
+    return str2;
   }
 
 }
